@@ -1,5 +1,5 @@
 import { useState } from "react"
-import tailwind from "../style/tailwind"
+import tailwind from "../styles/tailwind"
 import { useNavigate } from "react-router-dom"
 
 export default function Login() {

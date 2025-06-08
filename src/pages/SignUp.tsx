@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react"
-import tailwind from "../style/tailwind"
+import { useState } from "react"
+import tailwind from "../styles/tailwind"
 import { useNavigate } from "react-router-dom"
 
 export default function SignUp() {
