@@ -8,6 +8,7 @@ import Layout from './layouts/Layout'
 import Home from './pages/Home'
 import Movies from "./pages/Movies"
 import Series from './pages/Series'
+import Bookmarked from './pages/Bookmarked'
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,9 @@ const router = createBrowserRouter([
       }, {
         element: <Series />,
         path: "/series"
+      }, {
+        element: <Bookmarked />,
+        path: "/bookmarked"
       }
     ]
   }
