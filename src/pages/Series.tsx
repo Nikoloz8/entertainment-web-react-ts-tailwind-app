@@ -6,12 +6,12 @@ import { useContext } from "react"
 import { Context } from "../layouts/Layout"
 import RenderFilms from "../components/RenderFilms"
 
-export default function Movies() {
+export default function Series() {
 
     const { H1 } = tailwind()
     const { search, startSearch, setStartSearch } = useContext(Context)
 
-    const filteredData = data.filter((e) => e.category === "Movie")
+    const filteredData = data.filter((e) => e.category === "TV Series")
 
     const filteredFilms = filteredData.filter((e) => {
         if (search && startSearch) {
@@ -30,9 +30,9 @@ export default function Movies() {
                 <Aside />
             </div>
             <div className="flex flex-col">
-                <Search placeholder="Search for movies" />
+                <Search placeholder="Search for TV series" />
                 <div>
-                    {!search || !startSearch ? <h1 className={`${H1} m-[48px_0_24px_0]`}>Movies</h1> : <h1 className={`${H1} m-[48px_0_24px_0]`}>Found {filteredFilms.length} results for ‘{search}’</h1>}
+                    {!search || !startSearch ? <h1 className={`${H1} m-[48px_0_24px_0]`}>TV Series</h1> : <h1 className={`${H1} m-[48px_0_24px_0]`}>Found {filteredFilms.length} results for ‘{search}’</h1>}
                     <div className="flex gap-[40px] pr-[166px] mb-[50px] items-center justify-center flex-wrap">
                         <RenderFilms filteredFilms={filteredFilms} />
                     </div>

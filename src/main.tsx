@@ -7,6 +7,7 @@ import SignUp from './pages/SignUp'
 import Layout from './layouts/Layout'
 import Home from './pages/Home'
 import Movies from "./pages/Movies"
+import Series from './pages/Series'
 
 const router = createBrowserRouter([
   {
@@ -24,9 +25,12 @@ const router = createBrowserRouter([
       {
         element: <Home />,
         path: "/"
-      },{
+      }, {
         element: <Movies />,
         path: "/movies"
+      }, {
+        element: <Series />,
+        path: "/series"
       }
     ]
   }
