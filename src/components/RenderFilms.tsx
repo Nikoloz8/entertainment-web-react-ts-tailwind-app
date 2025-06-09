@@ -3,7 +3,7 @@ import tailwind from "../styles/tailwind"
 export default function RenderFilms({ filteredFilms }: { filteredFilms: TFilm[] }) {
 
     const { H4, P2 } = tailwind()
-
+    
     return (
         <>
             {

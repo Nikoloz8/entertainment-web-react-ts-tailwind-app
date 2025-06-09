@@ -6,7 +6,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
 
     const { H2 } = tailwind()
     const { setSearch, setStartSearch } = useContext(Context)
-
+    
     return (
         <div className="mt-[24px] w-[85vw] mr-[32px]!">
             <label htmlFor="search" className="flex items-center w-[100%]">

@@ -9,7 +9,7 @@ import RenderFilms from "../components/RenderFilms"
 export default function Bookmarked() {
 
     const { H1 } = tailwind()
-    const { search, startSearch, setStartSearch } = useContext(Context)
+    const { search, startSearch, setStartSearch, isTablet } = useContext(Context)
 
     const filteredDataS = data.filter((e) => e.isBookmarked && e.category === "TV Series")
     const filteredDataF = data.filter((e) => e.isBookmarked && e.category === "Movie")
@@ -39,20 +39,27 @@ export default function Bookmarked() {
 
     return (
         <div className="flex">
-            <div className="flex items-left">
-                <Aside />
-            </div>
+            {
+                !isTablet ? <div className="flex items-left">
+                    <Aside />
+                </div> : undefined
+            }
             <div className="flex flex-col">
+                {
+                    isTablet ? <div className="flex items-left">
+                        <Aside />
+                    </div> : undefined
+                }
                 <Search placeholder="Search for bookmarked shows" />
                 <div>
                     {!search || !startSearch ? <h1 className={`${H1} m-[48px_0_24px_0]`}>Bookmarked Movies</h1> : <h1 className={`${H1} m-[48px_0_24px_0]`}>Found {filteredFilms.length} results for ‘{search}’</h1>}
-                    <div className="flex gap-[40px] pr-[166px] mb-[50px] items-center justify-center flex-wrap">
+                    <div className="flex gap-[40px] mb-[50px] items-center justify-center flex-wrap">
                         <RenderFilms filteredFilms={filteredFilms} />
                     </div>
                 </div>
                 <div>
                     {!search || !startSearch ? <h1 className={`${H1} m-[48px_0_24px_0]`}>Bookmarked TV Series</h1> : undefined}
-                    <div className="flex gap-[40px] pr-[166px] mb-[50px] items-center justify-center flex-wrap">
+                    <div>
                         <RenderFilms filteredFilms={filteredSeries} />
                     </div>
                 </div>

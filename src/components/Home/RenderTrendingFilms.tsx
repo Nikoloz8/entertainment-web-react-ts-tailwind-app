@@ -8,7 +8,7 @@ export default function RenderTrendingFilms({ trendingFilms }: { trendingFilms: 
         <>
             {
                 trendingFilms.map((e, index) => {
-                    return <div key={index} style={{ backgroundImage: `url(${e.thumbnail.trending?.large})`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }} className="min-w-[470px] group h-[230px] flex flex-col justify-between rounded-[8px] p-[24px] mb-[20px] relative ">
+                    return <div key={index} style={{ backgroundImage: `url(${e.thumbnail.trending?.large})`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }} className="min-w-[470px] max-sm:min-w-[240px] max-sm:max-h-[140px] group h-[230px] flex flex-col justify-between rounded-[8px] p-[24px] mb-[20px] relative ">
                         <div className="absolute group-hover:bg-[rgba(0,0,0,0.5))] w-[100%] h-[100%] top-0 left-0 rounded-[8px] flex items-center justify-center">
                             <div className="w-[117px] h-[48px] hidden group-hover:flex rounded-[28.5px] bg-[rgba(255,255,255,0.25)] p-[8px] cursor-pointer items-center">
                                 <img src="/icon-play.svg" alt="" />
