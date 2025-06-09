@@ -3,13 +3,13 @@ import tailwind from "../styles/tailwind"
 export default function RenderFilms({ filteredFilms }: { filteredFilms: TFilm[] }) {
 
     const { H4, P2 } = tailwind()
-    
+
     return (
-        <>
+        <div className="flex flex-wrap justify-center gap-[30px] mb-[50px]">
             {
                 filteredFilms.map((e, index) => {
                     return <div key={index} className="flex flex-col">
-                        <div style={{ backgroundImage: `url(${e.thumbnail.regular?.large})`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }} className="w-[280px] group h-[174px] flex flex-col justify-between rounded-[8px] p-[16px] relative ">
+                        <div style={{ backgroundImage: `url(${e.thumbnail.regular?.large})`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }} className="w-[280px] max-md:w-[220px] max-md:h-[140px] max-sm:h-[110px] max-sm:w-[164px] group h-[174px] flex flex-col justify-between rounded-[8px] p-[16px] relative ">
                             <div className="absolute group-hover:bg-[rgba(0,0,0,0.5))] w-[100%] h-[100%] top-0 left-0 rounded-[8px] flex items-center justify-center">
                                 <div className="w-[117px] h-[48px] hidden group-hover:flex rounded-[28.5px] bg-[rgba(255,255,255,0.25)] p-[8px] cursor-pointer items-center">
                                     <img src="/icon-play.svg" alt="" />
@@ -39,7 +39,7 @@ export default function RenderFilms({ filteredFilms }: { filteredFilms: TFilm[] 
                         </div>
                     </div>
                 })}
-        </>
+        </div>
 
     )
 }
