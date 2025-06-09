@@ -5,4 +5,17 @@
     font-size: 10px !important;
     font-family: "Outfit";
   }
+
+  .scroll-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .scroll-hidden::-webkit-scrollbar {
+    display: none;
+  }
 }

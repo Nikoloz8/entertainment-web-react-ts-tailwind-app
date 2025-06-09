@@ -6,7 +6,7 @@ export default function Aside() {
     const navigate = useNavigate()
 
     return (
-        <aside className="p-[48px_32px_48px_32px] rounded-[20px] flex h-[960px] flex-col justify-between m-[32px] bg-[#161D2F]">
+        <aside className="p-[48px_32px_48px_32px] rounded-[20px] flex h-[960px] flex-col justify-between m-[24px] bg-[#161D2F]">
             <div className="flex flex-col items-center">
                 <img src="/logo.svg" alt="" />
                 <div className="flex flex-col gap-[40px] mt-[80px] items-center">

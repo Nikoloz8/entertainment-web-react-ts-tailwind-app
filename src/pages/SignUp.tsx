@@ -1,6 +1,7 @@
 import { useState } from "react"
 import tailwind from "../styles/tailwind"
 import { useNavigate } from "react-router-dom"
+import Functions from "../utils/Functions"
 
 export default function SignUp() {
 
@@ -17,26 +18,7 @@ export default function SignUp() {
 
   const navigate = useNavigate()
 
-  const handleRegister = () => {
-
-    const data = localStorage.getItem("1")
-
-    if (!data) {
-      localStorage.setItem("1", "[]")
-    }
-
-    if (data) {
-      const parsedData = JSON.parse(data)
-      console.log(parsedData)
-      parsedData.push({
-        password: credentials.password,
-        emailAddress: credentials.emailAddress
-      })
-
-      const stringedData = JSON.stringify(parsedData)
-      localStorage.setItem("1", stringedData)
-    }
-  }
+  const { handleRegister } = Functions({ credentials })
 
   return (
     <div className="flex items-center justify-center w-[100vw] flex-col min-h-[100vh]">
